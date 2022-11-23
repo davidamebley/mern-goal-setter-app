@@ -1,6 +1,9 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
 
 const Register = () => {
+    const [formData, setFormData] = useState({
+        
+    });
   return (
     <div>Register</div>
   )
