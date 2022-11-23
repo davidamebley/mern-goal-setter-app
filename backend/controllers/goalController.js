@@ -44,7 +44,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 
     // Check for User
     if (!user) {
-        res.status(400)
+        res.status(401)
         throw new Error('User not found')
     }
 

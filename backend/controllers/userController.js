@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const userExists = await User.findOne({email})
     if (userExists) {
         res.status(400)
-        throw new Error('User already exists')
+        throw new Error('A user with the same email already exists')
     }
 
     // Hash Password

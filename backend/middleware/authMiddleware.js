@@ -5,7 +5,7 @@ const User = require('../models/userModel')
 const protect = asyncHandler(async (req, res, next) =>{
     let token
 
-    // Check if http header contains authorization and has a Bearer token
+    // In the HTTP header, there is an authorization object. Check if http header contains authorization and has a Bearer token
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
         try {
             // Get token from header

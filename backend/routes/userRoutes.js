@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { registerUser, loginUser, getMe } = require('../controllers/userController')
-const {protect} = require('../middleware/authMiddleware')
+const {protect} = require('../middleware/authMiddleware')   //Our protect func from our middleware
 
 
 
