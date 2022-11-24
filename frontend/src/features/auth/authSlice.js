@@ -11,6 +11,8 @@ const initialState = {
     message: ''
 }
 
+// Register USer
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
