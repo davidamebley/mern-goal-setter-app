@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import { FaSignInAlt } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';  //useSelector is used to select sothg frm the state, and if we want to dispatch a function like register, etc., in the reducer, we use useDispatch
+import {useNavigate} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import { login, reset } from '../features/auth/authSlice';
+import Spinner from '../components/Spinner'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +13,25 @@ const Login = () => {
     });
 
     const { email, password } = formData;
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+
+    // We select what we want from our state
+    const {user, isLoading, isError, isSuccess, message} = useSelector((state) => state.auth)    //we specify which part of the state we want to get our stuff from );
+
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+        }
+
+        if (isSuccess || user) {
+            navigate('/');
+        }
+
+        dispatch(reset());    // reset the values above after theyve been checked
+
+    }, [user, isError, isSuccess, message, navigate, dispatch]);
 
     const onChange = (e) => {
         setFormData((prevState) => ({
@@ -19,6 +43,17 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+
+        const userData = {
+            email, password,
+        }
+
+        dispatch(login(userData));
+    }
+
+    // Spinner
+    if (isLoading) {
+        return <Spinner />
     }
 
 
