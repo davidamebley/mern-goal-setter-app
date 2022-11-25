@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -7,14 +7,14 @@ function Dashboard() {
   const dispatch = useDispatch();
   const {user} = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    if (!user) {
+      navigate('/login')
+    }
+  }, [user, navigate]);
+
   return (
-    <>
-      {user ? (
         <div>Dashboard</div>
-      ) : (
-        navigate('login')
-      )}
-    </>
   )
 }
 
