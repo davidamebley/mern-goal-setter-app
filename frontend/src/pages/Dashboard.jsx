@@ -50,7 +50,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>There are no goals to show now. Consider adding one first.</h3>
+          <h3>There are no goals to show now. Consider adding some first.</h3>
         )}
       </section>
     </>
