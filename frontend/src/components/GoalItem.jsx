@@ -13,7 +13,7 @@ const GoalItem = ({ goal }) => {
     <>
     <div className='goal'>
         <div className="action-buttons">
-            <div className="edit" onClick={()=> {setShowModal(true); setModalData('')}}>
+            <div className="edit" onClick={()=> {setShowModal(true); setModalData(goal.text)}}>
                 <FaPencilAlt/>
             </div>
             <div className="delete" onClick={() => dispatch(deleteGoal(goal._id))}>

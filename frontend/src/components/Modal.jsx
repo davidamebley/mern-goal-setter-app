@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaTimes } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 
 const Modal = ({ showModal, modalData, onClose }) => {
-  const data = modalData;
+  const [goal, setGoal] = useState(modalData);
   const navigate = useNavigate();
   if (!showModal) return null;
 
@@ -14,8 +14,14 @@ const Modal = ({ showModal, modalData, onClose }) => {
             Close
         </FaTimes>
         <div className='modal-content'>
-          <h2>Modal title</h2>
-          <p>U sfsnfkj ajksdg ksjdhnglskdjngkjbsnkjbgakjdbghjbk nbaskjfbjsbfjas j kjasbfhavshjfvbsajnf bsnbsnfb jasbah sf hjasgfjkas jsbnkj sfajskfasnfbjf ajksbfj fajks fkasjnlak fan jasb asiu vbsajvwy knbs vasbasjk v i</p>
+          <h2>Update Goal Text</h2>
+          <div className="form-group">
+                <label htmlFor="text"><b>Goal</b></label>
+                <input type="text" name='text' id='text' value={goal} onChange={(e) => setGoal(e.target.value)}/>
+            </div>
+        </div>
+        <div className="modal-buttons">
+          <button className="btn modal--button-main">Update</button>
         </div>
       </div>
     </div>
