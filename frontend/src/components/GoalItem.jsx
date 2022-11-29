@@ -9,11 +9,17 @@ const GoalItem = ({ goal }) => {
     const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState('');
 
+  const showModalData = () => {
+    setModalData(goal)
+    setShowModal(true);
+
+  }
+
   return (
     <>
     <div className='goal'>
         <div className="action-buttons">
-            <div className="edit" onClick={()=> {setShowModal(true); setModalData(goal.text)}}>
+            <div className="edit" onClick={()=> {showModalData(); console.log('Our Data: ', goal);}}>
                 <FaPencilAlt/>
             </div>
             <div className="delete" onClick={() => dispatch(deleteGoal(goal._id))}>
