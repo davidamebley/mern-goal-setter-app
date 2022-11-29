@@ -19,7 +19,7 @@ const GoalItem = ({ goal }) => {
     <>
     <div className='goal'>
         <div className="action-buttons">
-            <div className="edit" onClick={()=> {showModalData(); console.log('Our Data: ', goal);}}>
+            <div className="edit" onClick={()=> {showModalData()}}>
                 <FaPencilAlt/>
             </div>
             <div className="delete" onClick={() => dispatch(deleteGoal(goal._id))}>

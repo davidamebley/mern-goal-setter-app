@@ -1,18 +1,33 @@
 import { useEffect, useState } from "react";
 import { FaTimes } from 'react-icons/fa';
-import { useNavigate } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const Modal = ({ showModal, modalData, onClose }) => {
-  console.log('Initially, goal: ', modalData.text);
-  const [goal, setGoal] = useState('');
-  const navigate = useNavigate();
+  const goal = modalData;
+  const [goalText, setGoalText] = useState(goal.text);
   
   const handleInputChange = (e) => {
-      setGoal(e.target.value);
+    setGoalText(e.target.value);
   };
+
+  // const saySomething = () => {
+  //   console.log('Saying');
+  // }
+
+  useEffect(() => {
+    const fetchData = () => {
+      setGoalText(goal.text);
+    };
+
+
+    fetchData();
+  }, [goal, onClose]);
   
 
-  if (!showModal) return null;
+  // Show modal
+  if (!showModal || !modalData) return null;
+
+  // if (showModal) setGoalText(modalData.text);
 
   
 
@@ -23,7 +38,7 @@ const Modal = ({ showModal, modalData, onClose }) => {
   }
 
   return (
-    showModal && (
+    modalData ? (
       <div onClick={onClose} className='modal-overlay'>
       <div onClick={(e) => { e.stopPropagation()}} className='container-modal'>
         <FaTimes className='modal-close' onClick={onClose}>
@@ -35,7 +50,7 @@ const Modal = ({ showModal, modalData, onClose }) => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="text"><b>Goal</b></label>
-                    <input type="text" name='text' id='text' value={showModal && goal} onChange={handleInputChange}/>
+                    <input type="text" name='text' id='text' value={goalText || ''} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
                     <button type='submit' className='btn btn-block'>
@@ -43,10 +58,13 @@ const Modal = ({ showModal, modalData, onClose }) => {
                     </button>
                 </div>
             </form>
+            <h2>{goalText}</h2>
           </section>
         </div>
       </div>
     </div>
+    ) : (
+      <Spinner />
     )
   )
 };
