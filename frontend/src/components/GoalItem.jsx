@@ -12,7 +12,6 @@ const GoalItem = ({ goal }) => {
   const showModalData = () => {
     setModalData(goal)
     setShowModal(true);
-
   }
 
   return (
@@ -25,15 +24,11 @@ const GoalItem = ({ goal }) => {
             <div className="delete" onClick={() => dispatch(deleteGoal(goal._id))}>
                 <FaTimes />
             </div>
-            {/* <h3>Appear</h3> */}
         </div>
         <div>
             {new Date(goal.createdAt).toLocaleString('en-US')}
         </div>
         <h2>{goal.text}</h2>
-        {/* <button onClick={() => dispatch(deleteGoal(goal._id))} className='close'>x</button> */}
-
-        
     </div>
     <Modal showModal={showModal} onClose={() => setShowModal(false)} modalData={modalData} />
     </>

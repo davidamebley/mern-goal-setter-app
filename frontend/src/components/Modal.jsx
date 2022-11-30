@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { FaTimes } from 'react-icons/fa';
 import Spinner from "./Spinner";
+import { useDispatch } from "react-redux";
+import { updateGoal } from "../features/goals/goalSlice";
 
 const Modal = ({ showModal, modalData, onClose }) => {
   const goal = modalData;
   const [goalText, setGoalText] = useState(goal.text);
+  const dispatch = useDispatch();
   
   const handleInputChange = (e) => {
     setGoalText(e.target.value);
@@ -34,7 +37,8 @@ const Modal = ({ showModal, modalData, onClose }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-
+    dispatch(updateGoal({id: goal._id, text: goalText }));
+    setGoalText('');
   }
 
   return (
