@@ -35,7 +35,6 @@ const setGoal = asyncHandler(async (req, res) => {
 // @access Private
 const updateGoal = asyncHandler(async (req, res) => {
     const goal = await Goal.findById(req.params.id);
-    console.log('SERVER UPDATE INITIATED: ', req.body);
     if (!goal) {
         res.status(400)
         throw new Error('Server: Goal not found for Update operation')
@@ -58,7 +57,6 @@ const updateGoal = asyncHandler(async (req, res) => {
         new: true,
     })
 
-    console.log('UPDATE LOG::..', req.body.text);
     res.status(200).json(updatedGoal)
 })
 
