@@ -271,6 +271,65 @@ h3 {
   padding: 1rem 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  /* Header or Nav Section */
+  .header {
+    display: block;
+    font-size: 1em;
+  }
+
+  .header img {
+    display: none;
+  }
+  .header ul {
+    display: block;
+  }
+  .header ul li {
+    margin: 0;
+  }
+  .header .btn {
+    padding: 0.5em;
+    border-radius: 0.2em;
+    font-size: 1em;
+    font-weight: 300;
+  }
+  /* Hero Section */
+  .heading {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  /* Form and Content */
+  section label {
+    font-size: 1em;
+  }
+  .form,
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+  .goals {
+    display: flex;
+    flex-direction: column;
+  }
+  .goal {
+    margin: 0.5rem;
+  }
+  .goal .action-buttons {
+    font-size: 1.2em;
+  }
+  .goal div {
+    font-size: 0.6em;
+  }
+  .goal h2 {
+    font-size: 1em;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .container-modal {
     flex-direction: column;
@@ -294,14 +353,6 @@ h3 {
 
 @media (max-width: 600px) {
   .form {
-    width: 90%;
-  }
-
-  .heading h1 {
-    font-size: 2rem;
-  }
-
-  .heading p {
-    font-size: 1.5rem;
+    /* width: 90%; */
   }
 }
