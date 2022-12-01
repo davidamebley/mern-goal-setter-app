@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import goalService from "./goalService";
+import { useSelector } from "react-redux";
 
 const initialState = {
     goals: [],
@@ -68,10 +69,12 @@ export const goalSlice = createSlice({
                 state.isLoading = true
             })
             .addCase(createGoal.fulfilled, (state, action) => {
+                let newState = [action.payload, ...state.goals] //we place payload 1st
                 state.isLoading = false
                 state.isSuccess = true
                 state.isError = false
-                state.goals.push(action.payload)
+                console.log('In the GoalSlice:: ',newState)
+                state.goals = newState
             })
             .addCase(createGoal.rejected, (state, action) => {
                 state.isLoading = false
