@@ -2,6 +2,7 @@ import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
+import logo from '../assets/images/goal_setter_logo.png';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,9 +18,12 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <div className="logo">
-        <Link to='/'>Goal Setter</Link>
-      </div>
+      <Link to='/'>
+        <div className="header-title">
+          <img src={logo} alt="App logo" width={'80'} />
+          <div> Goal Setter </div>
+        </div>
+      </Link>
       <ul>
         {user ? (
           <li>
