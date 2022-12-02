@@ -54,7 +54,8 @@ const Modal = ({ showModal, modalData, onClose }) => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="text"><b>Goal</b></label>
-                    <input type="text" name='text' id='text' value={goalText || ''} onChange={handleInputChange} required/>
+                    {/* <input type="text" name='text' id='text' value={goalText || ''} onChange={handleInputChange} required/> */}
+                    <textarea name='text' id='text' value={goalText || ''} onChange={handleInputChange} rows="4" required ></textarea>
                 </div>
                 <div className="form-group">
                     <button type='submit' className='btn btn-block'>
@@ -62,7 +63,6 @@ const Modal = ({ showModal, modalData, onClose }) => {
                     </button>
                 </div>
             </form>
-            <h2>{goalText}</h2>
           </section>
         </div>
       </div>
