@@ -2,7 +2,7 @@
 ## Description
 This full stack web application was inspired by other smaller front end web apps I have designed before for setting personal goals. 
 A web application is almost ubiquitous and makes tracking of  goals set easier.
-- - <b>The app has been deployed on Heroku. View it [HERE] (https://goalsetteramebley.herokuapp.com/) </b>
+- - <b>The app has been deployed on Heroku. View it <a href="https://goalsetteramebley.herokuapp.com/"> HERE </a> </b>
 
 ## Fetures
 This full stack web application supoorts actions including:
