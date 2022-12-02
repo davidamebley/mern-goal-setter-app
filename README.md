@@ -5,7 +5,7 @@ A web application is almost ubiquitous and makes tracking of  goals set easier.
 - - <b>The app has been deployed on Heroku. View it <a href="https://goalsetteramebley.herokuapp.com/"> HERE </a> </b>
 
 ## Fetures
-This full stack web application supoorts actions including:
+This full stack web application supports actions including:
 - Registering an account as a new user
 - Signing into an existing account
 - Creating or adding a new goal
