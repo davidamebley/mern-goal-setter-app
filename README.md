@@ -20,3 +20,10 @@ The major technologies and packages used for designing this application includes
 - NodeJS/Express (Server-side scripting)
 - MongoDB (Main Database storage)
 - JWT (For user authentication)
+
+## Features to be added soon
+- Add a goal status:
+  - In-Progress
+  - Achieved
+
+
