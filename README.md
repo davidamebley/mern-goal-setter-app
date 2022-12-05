@@ -2,9 +2,9 @@
 ## Description
 This full stack web application was inspired by other smaller front end web apps I have designed before for setting personal goals. 
 A web application is almost ubiquitous and makes tracking of  goals set easier.
-- - <b>The app has been deployed on Heroku. View it <a href="https://goalsetteramebley.herokuapp.com/"> HERE </a> </b>
+  - <b>The app has been deployed on Heroku. View it <a href="https://goalsetteramebley.herokuapp.com/"> HERE </a> </b>
 
-## Fetures
+## Features
 This full stack web application supports actions including:
 - Registering an account as a new user
 - Signing into an existing account
@@ -22,8 +22,6 @@ The major technologies and packages used for designing this application includes
 - JWT (For user authentication)
 
 ## Features to be added soon
-- Add a goal status:
+- Add goal status:
   - In-Progress
   - Achieved
-
-
