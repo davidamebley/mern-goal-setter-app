@@ -18,6 +18,6 @@ const fakeAction = {
 describe('test actions in authSlice', () => {
     test('if given initial state ', () => {
         const state = authSlice(initialState, fakeAction);
-        expect(state.length).toEqual(0)
+        expect(state.length).toBeFalsy();
     })
 })

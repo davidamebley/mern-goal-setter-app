@@ -34,7 +34,7 @@ function Dashboard() {
   }
 
   return (
-    <>
+    <div className='dashboard' data-testid="dashboard">
       <section className="heading">
         <h1>Welcome, {user && user.name}</h1>
         <p>Dashboard</p>
@@ -44,7 +44,7 @@ function Dashboard() {
       {/* Display Goals */}
       <section className="content">
         {goals.length > 0 ? (
-          <div className="goals">
+          <div data-testid="goals" className="goals">
             {goals.map((goal) => (
               <GoalItem key={goal._id} goal={goal} />
             ))}
@@ -53,7 +53,7 @@ function Dashboard() {
           <h3>There are no goals to show now. Consider adding some first.</h3>
         )}
       </section>
-    </>
+    </div>
   )
 }
 
